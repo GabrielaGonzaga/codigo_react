@@ -1,0 +1,598 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.SPMEG.webApi</name>
+    </assembly>
+    <members>
+        <member name="P:senai.SPMEG.webApi.Controllers.ClinicasController._clinicaRepository">
+            <summary>
+            Objeto _clinicaRepository que irá receber todos os métodos definidos na interface IClinicaRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ClinicasController.#ctor">
+            <summary>
+            Instancia o objeto _clinicaRepository para que haja a referência nos métodos implementadas no repositório ClinicaRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ClinicasController.Get">
+            <summary>
+            Lista todos os clinicas
+            </summary>
+            <returns>Uma lista de clinicas e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ClinicasController.Put(System.Int32,senai.SPMEG.webApi.Domains.Clinica)">
+            <summary>
+            Atualiza um clinica existente
+            </summary>
+            <param name="id">ID do clinica que será atualizado</param>
+            <param name="clinicaAtualizado">Objeto clinicaAtualizado com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ClinicasController.GetById(System.Int32)">
+            <summary>
+            Busca um clinica através do seu ID
+            </summary>
+            <param name="id">ID do clinica que será buscado</param>
+            <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
+            http://localhost:5000/api/estudios/1
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ClinicasController.Post(senai.SPMEG.webApi.Domains.Clinica)">
+            <summary>
+            Cadastra um novo clinica
+            </summary>
+            <param name="novoClinica">Objeto novoClinica que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ClinicasController.Delete(System.Int32)">
+            <summary>
+            Deleta um clinica existente
+            </summary>
+            <param name="id">ID do clinica que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="P:senai.SPMEG.webApi.Controllers.ConsultasController._consultaRepository">
+            <summary>
+            Objeto _consultaRepository que irá receber todos os métodos definidos na interface IConsultaRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ConsultasController.#ctor">
+            <summary>
+            Instancia o objeto _consultaRepository para que haja a referência nos métodos implementadas no repositório ConsultaRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ConsultasController.Get">
+            <summary>
+            Lista todos os consultas
+            </summary>
+            <returns>Uma lista de consultas e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ConsultasController.Put(System.Int32,senai.SPMEG.webApi.Domains.Consulta)">
+            <summary>
+            Atualiza um consulta existente
+            </summary>
+            <param name="id">ID do consulta que será atualizado</param>
+            <param name="consultaAtualizada">Objeto consultaAtualizado com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ConsultasController.Put(System.Int32,System.String)">
+            <summary>
+            Atualiza uma situacao existente
+            </summary>
+            <param name="id">ID da situacao que será atualizado</param>
+            <param name="Situacao">Objeto situacao com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ConsultasController.GetById(System.Int32)">
+            <summary>
+            Busca um consulta através do seu ID
+            </summary>
+            <param name="id">ID do consulta que será buscado</param>
+            <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
+            http://localhost:5000/api/estudios/1
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ConsultasController.Post(senai.SPMEG.webApi.Domains.Consulta)">
+            <summary>
+            Cadastra um novo consulta
+            </summary>
+            <param name="novaConsulta">Objeto novoConsulta que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.ConsultasController.Delete(System.Int32)">
+            <summary>
+            Deleta um consulta existente
+            </summary>
+            <param name="id">ID do consulta que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="P:senai.SPMEG.webApi.Controllers.EspecialidadesController._especialidadeRepository">
+            <summary>
+            Objeto _especialidadeRepository que irá receber todos os métodos definidos na interface IEspecialidadeRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.EspecialidadesController.#ctor">
+            <summary>
+            Instancia o objeto _especialidadeRepository para que haja a referência nos métodos implementadas no repositório EspecialidadeRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.EspecialidadesController.Get">
+            <summary>
+            Lista todos os especialidades
+            </summary>
+            <returns>Uma lista de especialidades e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.EspecialidadesController.Put(System.Int32,senai.SPMEG.webApi.Domains.Especialidade)">
+            <summary>
+            Atualiza um especialidade existente
+            </summary>
+            <param name="id">ID do especialidade que será atualizado</param>
+            <param name="especialidadeAtualizado">Objeto especialidadeAtualizado com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.EspecialidadesController.GetById(System.Int32)">
+            <summary>
+            Busca um especialidade através do seu ID
+            </summary>
+            <param name="id">ID do especialidade que será buscado</param>
+            <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
+            http://localhost:5000/api/estudios/1
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.EspecialidadesController.Post(senai.SPMEG.webApi.Domains.Especialidade)">
+            <summary>
+            Cadastra um novo especialidade
+            </summary>
+            <param name="novoEspecialidade">Objeto novoEspecialidade que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.EspecialidadesController.Delete(System.Int32)">
+            <summary>
+            Deleta um especialidade existente
+            </summary>
+            <param name="id">ID do especialidade que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="P:senai.SPMEG.webApi.Controllers.LoginsController._perfilRepository">
+            <summary>
+            Objeto _perfilRepository que irá receber todos os métodos definidos na interface IPerfilRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.LoginsController.#ctor">
+            <summary>
+            Instancia o objeto _perfilRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="P:senai.SPMEG.webApi.Controllers.MedicosController._medicoRepository">
+            <summary>
+            Objeto _medicoRepository que irá receber todos os métodos definidos na interface IMedicoRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.MedicosController.#ctor">
+            <summary>
+            Instancia o objeto _medicoRepository para que haja a referência nos métodos implementadas no repositório MedicoRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.MedicosController.Get">
+            <summary>
+            Lista todos os medicos
+            </summary>
+            <returns>Uma lista de medicos e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.MedicosController.Put(System.Int32,senai.SPMEG.webApi.Domains.Medico)">
+            <summary>
+            Atualiza um medico existente
+            </summary>
+            <param name="id">ID do medico que será atualizado</param>
+            <param name="medicoAtualizado">Objeto medicoAtualizado com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.MedicosController.GetById(System.Int32)">
+            <summary>
+            Busca um medico através do seu ID
+            </summary>
+            <param name="id">ID do medico que será buscado</param>
+            <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
+            http://localhost:5000/api/estudios/1
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.MedicosController.Post(senai.SPMEG.webApi.Domains.Medico)">
+            <summary>
+            Cadastra um novo medico
+            </summary>
+            <param name="novoMedico">Objeto novoMedico que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.MedicosController.Delete(System.Int32)">
+            <summary>
+            Deleta um medico existente
+            </summary>
+            <param name="id">ID do medico que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="P:senai.SPMEG.webApi.Controllers.PacientesController._pacienteRepository">
+            <summary>
+            Objeto _pacienteRepository que irá receber todos os métodos definidos na interface IPacienteRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PacientesController.#ctor">
+            <summary>
+            Instancia o objeto _pacienteRepository para que haja a referência nos métodos implementadas no repositório PacienteRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PacientesController.Get">
+            <summary>
+            Lista todos os pacientes
+            </summary>
+            <returns>Uma lista de pacientes e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PacientesController.Put(System.Int32,senai.SPMEG.webApi.Domains.Paciente)">
+            <summary>
+            Atualiza um paciente existente
+            </summary>
+            <param name="id">ID do paciente que será atualizado</param>
+            <param name="pacienteAtualizado">Objeto pacienteAtualizado com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PacientesController.GetById(System.Int32)">
+            <summary>
+            Busca um paciente através do seu ID
+            </summary>
+            <param name="id">ID do paciente que será buscado</param>
+            <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
+            http://localhost:5000/api/estudios/1
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PacientesController.Post(senai.SPMEG.webApi.Domains.Paciente)">
+            <summary>
+            Cadastra um novo paciente
+            </summary>
+            <param name="novoPaciente">Objeto novoPaciente que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PacientesController.Delete(System.Int32)">
+            <summary>
+            Deleta um paciente existente
+            </summary>
+            <param name="id">ID do paciente que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="P:senai.SPMEG.webApi.Controllers.PerfisController._perfilRepository">
+            <summary>
+            Objeto _perfilRepository que irá receber todos os métodos definidos na interface IPerfilRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PerfisController.#ctor">
+            <summary>
+            Instancia o objeto _perfilRepository para que haja a referência nos métodos implementadas no repositório PerfilRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PerfisController.Get">
+            <summary>
+            Lista todos os perfis
+            </summary>
+            <returns>Uma lista de perfis e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PerfisController.Put(System.Int32,senai.SPMEG.webApi.Domains.Perfi)">
+            <summary>
+            Atualiza um perfil existente
+            </summary>
+            <param name="id">ID do perfil que será atualizado</param>
+            <param name="perfilAtualizado">Objeto perfilAtualizado com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PerfisController.GetById(System.Int32)">
+            <summary>
+            Busca um perfil através do seu ID
+            </summary>
+            <param name="id">ID do perfil que será buscado</param>
+            <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
+            http://localhost:5000/api/estudios/1
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PerfisController.Post(senai.SPMEG.webApi.Domains.Perfi)">
+            <summary>
+            Cadastra um novo perfil
+            </summary>
+            <param name="novoPerfil">Objeto novoPerfil que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.PerfisController.Delete(System.Int32)">
+            <summary>
+            Deleta um perfil existente
+            </summary>
+            <param name="id">ID do perfil que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="P:senai.SPMEG.webApi.Controllers.TipoPerfisController._tipoDePerfilRepository">
+            <summary>
+            Objeto _tipoDePerfilRepository que irá receber todos os métodos definidos na interface ITipoPerfilRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.TipoPerfisController.#ctor">
+            <summary>
+            Instancia o objeto _tipoDePerfilRepository para que haja a referência nos métodos implementas no repositório TipoPerfilRepository
+            </summary>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.TipoPerfisController.Get">
+            <summary>
+            Lista todos os tipoPerfis
+            </summary>
+            <returns>Uma lista de tipoPerfis e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.TipoPerfisController.Put(System.Int32,senai.SPMEG.webApi.Domains.TipoPerfil)">
+            <summary>
+            Atualiza um tipoDePerfil existente
+            </summary>
+            <param name="id">ID do tipoDePerfil que será atualizado</param>
+            <param name="tipoDePerfilAtualizado">Objeto tipoDePerfilAtualizado com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.TipoPerfisController.GetById(System.Int32)">
+            <summary>
+            Busca um tipoDePerfil através do seu ID
+            </summary>
+            <param name="id">ID do tipoDePerfil que será buscado</param>
+            <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.TipoPerfisController.Post(senai.SPMEG.webApi.Domains.TipoPerfil)">
+            <summary>
+            Cadastra um novo tipoDePerfil
+            </summary>
+            <param name="novoTipoPerfil">Objeto novoTipoPerfil que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Controllers.TipoPerfisController.Delete(System.Int32)">
+            <summary>
+            Deleta um tipoDePerfil existente
+            </summary>
+            <param name="id">ID do tipoDePerfil que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IClinicaRepository.Listar">
+            <summary>
+            Lista todos os clinicas
+            </summary>
+            <returns>Uma lista de clinicas</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IClinicaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um clinica através do seu ID
+            </summary>
+            <param name="id">ID do clinica que será buscado</param>
+            <returns>Um clinica buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IClinicaRepository.Cadastrar(senai.SPMEG.webApi.Domains.Clinica)">
+            <summary>
+            Cadastra um novo clinica
+            </summary>
+            <param name="novoClinica">Objeto novoClinica que será cadastrado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IClinicaRepository.Atualizar(System.Int32,senai.SPMEG.webApi.Domains.Clinica)">
+            <summary>
+            Atualiza um clinica existente
+            </summary>
+            <param name="id">ID do clinica que será atualizado</param>
+            <param name="clinicaAtualizado">Objeto clinicaAtualizado com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IClinicaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um clinica existente
+            </summary>
+            <param name="id">ID do clinica que será deletado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.Listar">
+            <summary>
+            Lista todos os consultas
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um consulta através do seu ID
+            </summary>
+            <param name="id">ID do consulta que será buscado</param>
+            <returns>Um consulta buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.Agendar(senai.SPMEG.webApi.Domains.Consulta)">
+            <summary>
+            Cadastra um novo consulta
+            </summary>
+            <param name="novaConsulta">Objeto novaConsulta que será cadastrada</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.Atualizar(System.Int32,senai.SPMEG.webApi.Domains.Consulta)">
+            <summary>
+            Atualiza um consulta existente
+            </summary>
+            <param name="id">ID do consulta que será atualizada</param>
+            <param name="consultaAtualizada">Objeto consultaAtualizada com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.AtualizarSituacao(System.Int32,System.String)">
+            <summary>
+            Atualiza uma situaão existente
+            </summary>
+            <param name="id">ID do consulta e a situação que será atualizada</param>
+            <param name="consultaAtualizada">Objeto consultaAtualizado com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um consulta existente
+            </summary>
+            <param name="id">ID do consulta que será deletada</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.ListarConsultaPorMedico(System.Int32)">
+            <summary>
+            Lista todas as consultas de um medico
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.ListarConsultaPorPaciente(System.Int32)">
+            <summary>
+            Lista todas as consultas de um paciente
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IEspecialidadeRepository.Listar">
+            <summary>
+            Lista todos os especialidades
+            </summary>
+            <returns>Uma lista de especialidades</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IEspecialidadeRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um especialidade através do seu ID
+            </summary>
+            <param name="id">ID do especialidade que será buscado</param>
+            <returns>Um especialidade buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IEspecialidadeRepository.Cadastrar(senai.SPMEG.webApi.Domains.Especialidade)">
+            <summary>
+            Cadastra um novo especialidade
+            </summary>
+            <param name="novoEspecialidade">Objeto novoEspecialidade que será cadastrado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IEspecialidadeRepository.Atualizar(System.Int32,senai.SPMEG.webApi.Domains.Especialidade)">
+            <summary>
+            Atualiza um especialidade existente
+            </summary>
+            <param name="id">ID do especialidade que será atualizado</param>
+            <param name="especialidadeAtualizado">Objeto especialidadeAtualizado com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IEspecialidadeRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um especialidade existente
+            </summary>
+            <param name="id">ID do especialidade que será deletado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IMedicoRepository.Listar">
+            <summary>
+            Lista todos os medicos
+            </summary>
+            <returns>Uma lista de medicos</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IMedicoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um medico através do seu ID
+            </summary>
+            <param name="id">ID do medico que será buscado</param>
+            <returns>Um medico buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IMedicoRepository.Cadastrar(senai.SPMEG.webApi.Domains.Medico)">
+            <summary>
+            Cadastra um novo medico
+            </summary>
+            <param name="novoMedico">Objeto novoMedico que será cadastrado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IMedicoRepository.Atualizar(System.Int32,senai.SPMEG.webApi.Domains.Medico)">
+            <summary>
+            Atualiza um medico existente
+            </summary>
+            <param name="id">ID do medico que será atualizado</param>
+            <param name="medicoAtualizado">Objeto medicoAtualizado com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IMedicoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um medico existente
+            </summary>
+            <param name="id">ID do medico que será deletado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPacienteRepository.Listar">
+            <summary>
+            Lista todos os pacientes
+            </summary>
+            <returns>Uma lista de pacientes</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPacienteRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um paciente através do seu ID
+            </summary>
+            <param name="id">ID do paciente que será buscado</param>
+            <returns>Um paciente buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPacienteRepository.Cadastrar(senai.SPMEG.webApi.Domains.Paciente)">
+            <summary>
+            Cadastra um novo paciente
+            </summary>
+            <param name="novoPaciente">Objeto novoPaciente que será cadastrado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPacienteRepository.Atualizar(System.Int32,senai.SPMEG.webApi.Domains.Paciente)">
+            <summary>
+            Atualiza um paciente existente
+            </summary>
+            <param name="id">ID do paciente que será atualizado</param>
+            <param name="pacienteAtualizado">Objeto pacienteAtualizado com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPacienteRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um paciente existente
+            </summary>
+            <param name="id">ID do paciente que será deletado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPerfilRepository.Listar">
+            <summary>
+            Lista todos os perfis
+            </summary>
+            <returns>Uma lista de perfis</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPerfilRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um perfil através do seu ID
+            </summary>
+            <param name="id">ID do perfil que será buscado</param>
+            <returns>Um perfil buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPerfilRepository.Cadastrar(senai.SPMEG.webApi.Domains.Perfi)">
+            <summary>
+            Cadastra um novo perfil
+            </summary>
+            <param name="novoPerfil">Objeto novoPerfil que será cadastrado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPerfilRepository.Atualizar(System.Int32,senai.SPMEG.webApi.Domains.Perfi)">
+            <summary>
+            Atualiza um perfil existente
+            </summary>
+            <param name="id">ID do perfil que será atualizado</param>
+            <param name="perfilAtualizado">Objeto perfilAtualizado com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPerfilRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um perfil existente
+            </summary>
+            <param name="id">ID do perfil que será deletado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.IPerfilRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">e-mail do usuário</param>
+            <param name="senha">senha do usuário</param>
+            <returns>Um objeto do tipo Perfil que foi buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.ITipoPerfilRepository.Listar">
+            <summary>
+            Lista todos os tipos de Perfis
+            </summary>
+            <returns>Uma lista de tipoPerfil</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.ITipoPerfilRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipoPerfil através do seu ID
+            </summary>
+            <param name="id">ID do tipoPerfil que será buscado</param>
+            <returns>Um tipoPerfil buscado</returns>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.ITipoPerfilRepository.Cadastrar(senai.SPMEG.webApi.Domains.TipoPerfil)">
+            <summary>
+            Cadastra um novo tipoPerfil
+            </summary>
+            <param name="novoTipoPerfil">Objeto novoTipoPerfil que será cadastrado</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.ITipoPerfilRepository.Atualizar(System.Int32,senai.SPMEG.webApi.Domains.TipoPerfil)">
+            <summary>
+            Atualiza um tipoPerfil existente
+            </summary>
+            <param name="id">ID do tipoPerfil que será atualizado</param>
+            <param name="tipoPerfilAtualizado">Objeto tipoPerfilAtualizado com as novas informações</param>
+        </member>
+        <member name="M:senai.SPMEG.webApi.Interfaces.ITipoPerfilRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipoPerfil existente
+            </summary>
+            <param name="id">ID do tipoPerfil que será deletado</param>
+        </member>
+    </members>
+</doc>
