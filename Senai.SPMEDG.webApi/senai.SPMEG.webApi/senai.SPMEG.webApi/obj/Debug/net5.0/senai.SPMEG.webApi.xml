@@ -414,15 +414,9 @@
             </summary>
             <param name="id">ID do consulta que será deletada</param>
         </member>
-        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.ListarConsultaPorMedico(System.Int32)">
+        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.ListarMinhasConsultas(System.Int32)">
             <summary>
             Lista todas as consultas de um medico
-            </summary>
-            <returns>Uma lista de consultas</returns>
-        </member>
-        <member name="M:senai.SPMEG.webApi.Interfaces.IConsultaRepository.ListarConsultaPorPaciente(System.Int32)">
-            <summary>
-            Lista todas as consultas de um paciente
             </summary>
             <returns>Uma lista de consultas</returns>
         </member>

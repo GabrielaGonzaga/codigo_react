@@ -53,13 +53,8 @@ namespace senai.SPMEG.webApi.Interfaces
         /// Lista todas as consultas de um medico
         /// </summary>
         /// <returns>Uma lista de consultas</returns>
-        List<Consulta> ListarConsultaPorMedico(int id);
+        List<Consulta> ListarMinhasConsultas(int id);
 
-        /// <summary>
-        /// Lista todas as consultas de um paciente
-        /// </summary>
-        /// <returns>Uma lista de consultas</returns>
-        List<Consulta> ListarConsultaPorPaciente(int id);
     }
 }
 

@@ -103,27 +103,48 @@ namespace senai.SPMEG.webApi.Repositories
             return ctx.Consultas.ToList();
         }
 
-        public List<Consulta> ListarConsultaPorMedico(int id)
+        public List<Consulta> ListarMinhasConsultas(int id)
         {
-            return ctx.Consultas
-                .Include(c => c.IdMedicoNavigation.Nome)
-                .Include(c => c.IdPacienteNavigation.Nome)
-                .Include(c => c.DataConsulta.ToString())
-                .Include(c => c.Situacao)
-                .Where(p => p.IdMedico == id)
+                 return ctx.Consultas
+
+                //.Include(c => c.IdPacienteNavigation)
+
+                //.Include(c => c.IdMedicoNavigation)
+
+                //.Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation)
+
+                .Select(c => new Consulta
+                {
+                    IdConsulta = c.IdConsulta,
+                    DataConsulta = c.DataConsulta,
+
+                    IdPacienteNavigation = new Paciente
+                    {
+                        IdPaciente = c.IdPacienteNavigation.IdPaciente,
+                        IdPerfil = c.IdPacienteNavigation.IdPerfil,
+                        //NomePaciente = c.IdPacienteNavigation.Nome,
+                    },
+
+                      IdMedicoNavigation = new Medico
+                    {
+                        IdMedico = c.IdMedicoNavigation.IdMedico,
+                        IdPerfil = c.IdMedicoNavigation.IdPerfil,
+                        // NomeMedico = c.IdMedicoNavigation.Nome,
+
+                        IdEspecialidadeNavigation = new Especialidade
+                        {
+                            IdEspecialidade = c.IdMedicoNavigation.IdEspecialidadeNavigation.IdEspecialidade,
+                            //DescricaoEspecialidade = c.IdMedicoNavigation.IdEspecialidadeNavigation.NomeEspecialidade
+                        }
+                    },
+
+                })
+
+                .Where(c => c.IdPacienteNavigation.IdPerfil == id || c.IdMedicoNavigation.IdPerfil == id)
+
                 .ToList();
         }
 
-        public List<Consulta> ListarConsultaPorPaciente(int id)
-        {
-            return ctx.Consultas
-               .Include(c => c.IdPacienteNavigation.Nome)
-               .Include(c => c.IdMedicoNavigation.Nome)
-               .Include(c => c.DataConsulta.ToString())
-               .Include(c => c.Situacao)
-               .Where(p => p.IdPaciente == id)
-               .ToList();
-        }
+        
     }
 }
-

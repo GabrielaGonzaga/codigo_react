@@ -15,7 +15,7 @@ class medicos extends Component{
         console.log(this.state.idEspecialidade)
 
         // Chamando a API com o fetch
-        fetch( 'http://localhost:5000/api/especialidadeoks' )
+        fetch( 'http://localhost:5000/api/especialidades' )
 
         // Define o tipó de retorno (JSON)
         .then(resposta => resposta.json())
@@ -49,9 +49,8 @@ class medicos extends Component{
                                     {   
                                         this.state.listaConsultas.map( (consulta) => {
                                             return(
-                                                <tr>
-                                                    <td></td>
-                                                    <td>{consulta.nomeEspecialidade}</td>
+                                                <tr key={consulta.idEspecialidade}>
+                                                    <td>{consulta.idEspecialidade}</td>
                                                     <td>{consulta.nomeEspecialidade}</td>
                                                 </tr>
                                             )

@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +19,18 @@ namespace senai.SPMEG.webApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
             
+              .AddNewtonsoftJson(options =>
+                {
+                    // Ignora os loopings nas consultas
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    // Ignora valores nulos ao fazer jun��es nas consultas
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                });
 
             services
                 .AddSwaggerGen();
-
 
             services
                //Forma de autentica��o
@@ -60,10 +67,9 @@ namespace senai.SPMEG.webApi
                    };
                });
 
-               
-             // Adiciona o CORS ao projeto
+            // Adiciona o CORS ao projeto
             services.AddCors(options => {
-                options.AddPolicy("CorsPolicy", 
+                options.AddPolicy("CorsPolicy",
                     builder => {
                         builder.WithOrigins("http://localhost:3000", "http://localhost:19006")
                                                                     .AllowAnyHeader()
@@ -71,6 +77,7 @@ namespace senai.SPMEG.webApi
                     }
                 );
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,7 +100,7 @@ namespace senai.SPMEG.webApi
                 app.UseDeveloperExceptionPage();
             }
 
-             // Define o uso de CORS
+            // Define o uso de CORS
             app.UseCors("CorsPolicy");
 
             app.UseRouting();

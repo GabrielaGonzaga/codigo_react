@@ -68,13 +68,15 @@ namespace senai.SPMEG.webApi.Contexts
             modelBuilder.Entity<Consulta>(entity =>
             {
                 entity.HasKey(e => e.IdConsulta)
-                    .HasName("PK__Consulta__CA9C61F543CCA333");
+                    .HasName("PK__Consulta__CA9C61F598E83FA8");
 
                 entity.Property(e => e.IdConsulta).HasColumnName("idConsulta");
 
                 entity.Property(e => e.DataConsulta)
-                    .HasColumnType("smalldatetime")
+                    .HasColumnType("date")
                     .HasColumnName("dataConsulta");
+
+                entity.Property(e => e.HoraConsulta).HasColumnName("horaConsulta");
 
                 entity.Property(e => e.IdMedico).HasColumnName("idMedico");
 
@@ -89,12 +91,12 @@ namespace senai.SPMEG.webApi.Contexts
                 entity.HasOne(d => d.IdMedicoNavigation)
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdMedico)
-                    .HasConstraintName("FK__Consultas__idMed__4F7CD00D");
+                    .HasConstraintName("FK__Consultas__idMed__70DDC3D8");
 
                 entity.HasOne(d => d.IdPacienteNavigation)
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdPaciente)
-                    .HasConstraintName("FK__Consultas__idPac__4E88ABD4");
+                    .HasConstraintName("FK__Consultas__idPac__6FE99F9F");
             });
 
             modelBuilder.Entity<Especialidade>(entity =>

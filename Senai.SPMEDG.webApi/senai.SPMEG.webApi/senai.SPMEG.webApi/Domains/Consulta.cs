@@ -10,6 +10,7 @@ namespace senai.SPMEG.webApi.Domains
         public int IdConsulta { get; set; }
         public int? IdPaciente { get; set; }
         public int? IdMedico { get; set; }
+        public TimeSpan HoraConsulta { get; set; }
         public DateTime DataConsulta { get; set; }
         public string Situacao { get; set; }
 

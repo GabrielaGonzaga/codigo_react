@@ -131,48 +131,22 @@ namespace senai.SPMEG.webApi.Controllers
             return StatusCode(200);
         }
 
-        [Authorize(Roles = "2")]
-        [HttpGet("Medicos")]
-        public IActionResult GetMyM()
+        [Authorize(Roles = "2, 3")]
+        [HttpGet("minhasconsultas")]
+        public IActionResult ListarMinhasConsultas()
         {
             try
             {
-                // Cria uma variável idPerfil que recebe o valor do ID do usuário que está logado
-                int idPerfil = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-
-                // Retora a resposta da requisição 200 - OK fazendo a chamada para o método e trazendo a lista
-                return Ok(_consultaRepository.ListarConsultaPorMedico(idPerfil));
+                int idPerfil = Convert.ToInt32(HttpContext.User.Claims.First(m => m.Type == JwtRegisteredClaimNames.Jti).Value);
+                
+                return Ok(_consultaRepository.ListarMinhasConsultas(idPerfil));
             }
-            catch (Exception error)
+            catch (Exception erro)
             {
-                // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
                 return BadRequest(new
                 {
                     mensagem = "Não é possível mostrar as consultas se o usuário não estiver logado!",
-                    error
-                });
-            }
-        }
-
-        [Authorize(Roles = "3")]
-        [HttpGet("Pacientes")]
-        public IActionResult GetMyP()
-        {
-            try
-            {
-                // Cria uma variável idUsuario que recebe o valor do ID do usuário que está logado
-                int idPerfil = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-
-                // Retora a resposta da requisição 200 - OK fazendo a chamada para o método e trazendo a lista
-                return Ok(_consultaRepository.ListarConsultaPorPaciente(idPerfil));
-            }
-            catch (Exception error)
-            {
-                // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
-                return BadRequest(new
-                {
-                    mensagem = "Não é possível mostrar as consultas se o usuário não estiver logado!",
-                    error
+                    erro
                 });
             }
         }
